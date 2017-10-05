@@ -1,0 +1,18 @@
+{
+  "name": "eu-wheather",
+  "version": "1.0.0",
+  "description": "Retrieves weather information for five european cities.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "eu-weather"
+  },
+  "keywords": [
+    "Angular"
+  ],
+  "author": "Ernesto Herrera",
+  "license": "ISC"
+}

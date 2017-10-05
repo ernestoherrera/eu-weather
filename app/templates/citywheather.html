@@ -1,0 +1,15 @@
+﻿<div id="control-container" class="col-lg-2 col-md-3 col-sm-6 col-xs-12" ng-click="getForecast()">
+        <h2>{{$ctrl.city.value}}</h2>
+        <h6 id="left-data">Avg Temp</h6><h6 id="right-data">Wind Strength</h6>
+        <h3 id="left-data">{{$ctrl.city.temp | number: 0}}&deg;</h3><h3 id="right-data">{{$ctrl.city.wind.speed}} m/s</h3>
+
+    <div id="expanded-display" class="{{expandedView}}">
+        <h3 id="center-subtitle">Hourly Forecast</h3>
+        <ul id="temp-list">
+            <li ng-repeat="item in $ctrl.city.forecast">
+                <span id="hour">{{item.hour | date: 'M/d/yy h:m a' : 'GMT'}}</span><span id="temp">{{item.temp | number: 0}}&deg;</span>
+            </li>
+        </ul>
+    </div>
+    <div>data as of {{$ctrl.city.dataAsOf | date: 'M/d/yy h:mm a' : 'GMT'}} GMT</div>
+</div>
