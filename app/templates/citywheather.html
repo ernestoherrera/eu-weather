@@ -7,7 +7,7 @@
         <h3 id="center-subtitle">Hourly Forecast</h3>
         <ul id="temp-list">
             <li ng-repeat="item in $ctrl.city.forecast">
-                <span id="hour">{{item.hour | date: 'M/d/yy h:m a' : 'GMT'}}</span><span id="temp">{{item.temp | number: 0}}&deg;</span>
+                <span id="hour">{{item.hour | date: 'M/d/yy h:mm a' : 'GMT'}}</span><span id="temp">{{item.temp | number: 0}}&deg;</span>
             </li>
         </ul>
     </div>

@@ -71,12 +71,12 @@
 #control-container #expanded-display #hour {
     display: inline-block;
     text-align: left;
-    width: 45%;
+    width: 55%;
 }
 #control-container #expanded-display #temp {
     display: inline-block;
     text-align: center;
-    width: 50%;
+    width: 40%;
 }
 
 #control-container #expanded-display

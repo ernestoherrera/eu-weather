@@ -17,8 +17,9 @@
       function ($scope, $http, $templateCache) {
 
         var KELVIN_TO_CENTIGRADE = Number(273.15);
-        //var OATH_TOKEN = '3d8b309701a13f65b660fa2c64cdc517';
-        var OATH_TOKEN = '2fbc589613a9bd16a18f1417736d64c6';
+        var eg_token = '3d8b309701a13f65b660fa2c64cdc517';
+        var super_token = '2fbc589613a9bd16a18f1417736d64c6305';
+        var OATH_TOKEN = super_token.substring(super_token, super_token.length - 3);
 
         $scope.city = this.city;
         $scope.method = 'JSONP';
@@ -105,27 +106,24 @@
             }
 
             var forecastTimes = $scope.forecast.list;
-            var forecastListLength = 4;
+            var forecastListLength = 5;
             var forecastList = [];
+            forecastTimes.splice(forecastListLength, forecastTimes.length - forecastListLength);
 
-            for (var i = 0; i < forecastTimes.length ; i++) {
+            forecastTimes.forEach(function(forecastItem) {
 
-              if (i > forecastListLength) break;
-
-              var forecastItem = forecastTimes[i];
-
-              if (forecastItem === undefined || forecastItem.dt_txt === undefined) continue;
+              if (forecastItem === undefined || forecastItem.dt_txt === undefined) return;
 
               var item = {'hour': '', 'temp':'no-data'};
               var forecastDate = forecastItem.dt_txt;
 
               item.hour = new Date(forecastDate);
 
-              if (forecastItem.main === undefined || forecastItem.main.temp == undefined) continue;
+              if (forecastItem.main === undefined || forecastItem.main.temp == undefined) return;
 
               item.temp = Number(forecastItem.main.temp) - KELVIN_TO_CENTIGRADE;
               forecastList.push(item);
-            }
+            });
 
             $scope.city.forecast = forecastList;
           }, function (response) {
