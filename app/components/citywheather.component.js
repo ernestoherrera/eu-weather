@@ -46,10 +46,10 @@
 
         function getCityWeather() {
             $scope.url = "http://api.openweathermap.org/data/2.5/weather?id=" + $scope.city.key + "&appid=" + OATH_TOKEN + "&callback=JSON_CALLBACK";
-
+            console.log($scope.url);
             $scope.code = null;
             $scope.response = null;
-
+            console.log('Before ajax call');
             $http({ method: $scope.method, url: $scope.url, cache: $templateCache }).
             then(function (response) {
 
@@ -92,7 +92,7 @@
 
           $scope.code = null;
           $scope.forecast = null;
-
+          console.log('Before ajax call 2');
           $http({ method: $scope.method, url: $scope.url, cache: $templateCache }).
           then(function (response) {
 
