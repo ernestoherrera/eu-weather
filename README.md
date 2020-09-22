@@ -3,6 +3,9 @@
 The purpose of this repo is to show the weather for five european cities using angular 1.5
 This is my first try at Angular 1.5
 
+## Demo
+Click [here](http://ernestoherrera.net/eu-weather/) to see it live.
+
 ## Features
  1. Responsive design using Bootstrap
  2. When the site opens, it shows the city name, tempeture, and wind strength
@@ -21,6 +24,6 @@ All you need is a local web server that serves the single page app (spa). You ma
 
 The spa is using two components:
 
-1. cityweather Component: This is the work horse of the site. It will display the initial tile by making an API call to[http://openweathermap.org/](http://openweathermap.org/current). This call uses JSONP to workaround the cross-site scripting call. The tempeture shown in Centigrades is the avearage from the min and max for the day. When clicked, it will make a second call to the api to get the forecast weather for the selected city and displays it. 
+1. cityweather Component: This is the work horse of the site. It will display the initial tile by making an API call to [http://openweathermap.org/](http://openweathermap.org/current). This call uses JSONP to workaround the cross-site scripting call. The tempeture shown in Centigrades is the avearage from the min and max for the day. When clicked, it will make a second call to the api to get the forecast weather for the selected city and displays it. 
 
 2. showCities Component: It contains an array of city objects which shows the city name, and city id. It will then loop through this array creating cityweather components on the main index page.
