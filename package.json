@@ -1,6 +1,6 @@
 {
   "name": "eu-wheather",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Retrieves weather information for five european cities.",
   "main": "index.html",
   "scripts": {
