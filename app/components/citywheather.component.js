@@ -10,7 +10,7 @@
         // We must whitelist the JSONP endpoint that we are using to show that we trust it
         $sceDelegateProvider.resourceUrlWhitelist([
             'self',
-            'http://api.openweathermap.org/**'
+            'https://api.openweathermap.org/**'
         ]);
     }])
     .controller('cityweatherController', ['$scope', '$http', '$templateCache',
@@ -45,7 +45,7 @@
         }
 
         function getCityWeather() {
-            $scope.url = "http://api.openweathermap.org/data/2.5/weather?id=" + $scope.city.key + "&appid=" + OATH_TOKEN + "&callback=JSON_CALLBACK";
+            $scope.url = "https://api.openweathermap.org/data/2.5/weather?id=" + $scope.city.key + "&appid=" + OATH_TOKEN + "&callback=JSON_CALLBACK";
             
             $scope.code = null;
             $scope.response = null;
@@ -88,7 +88,7 @@
             $scope.expandedView = 'on';
           }
 
-          $scope.url = "http://api.openweathermap.org/data/2.5/forecast?id=" + $scope.city.key + "&appid=" + OATH_TOKEN + "&callback=JSON_CALLBACK";
+          $scope.url = "https://api.openweathermap.org/data/2.5/forecast?id=" + $scope.city.key + "&appid=" + OATH_TOKEN + "&callback=JSON_CALLBACK";
 
           $scope.code = null;
           $scope.forecast = null;
